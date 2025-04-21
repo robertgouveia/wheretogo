@@ -41,16 +41,15 @@ export default function Hero() {
                         </button>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        {user ? (
-                            <a href="/dashboard" className="text-sm/6 font-semibold text-white">
-                                Dashboard <span aria-hidden="true">&rarr;</span>
-                            </a>
-                        ) : (
-                            <a href="/login" className="text-sm/6 font-semibold text-white">
-                                Log in <span aria-hidden="true">&rarr;</span>
-                            </a>
-                        )}
-
+                        {/*{user ? (*/}
+                        {/*    <a href="/dashboard" className="text-sm/6 font-semibold text-white">*/}
+                        {/*        Dashboard <span aria-hidden="true">&rarr;</span>*/}
+                        {/*    </a>*/}
+                        {/*) : (*/}
+                        {/*    <a href="/login" className="text-sm/6 font-semibold text-white">*/}
+                        {/*        Log in <span aria-hidden="true">&rarr;</span>*/}
+                        {/*    </a>*/}
+                        {/*)}*/}
                     </div>
                 </nav>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">

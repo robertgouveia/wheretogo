@@ -1,30 +1,11 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
+import { formatHour, getOrdinal, padZero } from '@/lib/utils';
 
 const statuses: { [key: string]: string } = {
     Upcoming: 'text-green-600 bg-green-50 ring-green-500/10',
     Archived: 'text-gray-800 bg-gray-50 ring-gray-600/20',
 }
-
-function getOrdinal(day: number) {
-    if (day > 3 && day < 21) return 'th';
-    switch (day % 10) {
-        case 1: return 'st';
-        case 2: return 'nd';
-        case 3: return 'rd';
-        default: return 'th';
-    }
-}
-
-function padZero(n: number) {
-    return n < 10 ? '0' + n : n;
-}
-
-function formatHour(date: Date) {
-    const hour = date.getHours() % 12 || 12; // Convert 0 to 12 for 12-hour clock
-    return padZero(hour);
-}
-
 
 const bookings = [
     {
