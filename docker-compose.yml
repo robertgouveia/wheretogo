@@ -1,0 +1,18 @@
+services:
+
+    pg:
+        image: postgres:17-alpine
+        container_name: postgres
+        environment:
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: development
+        ports:
+            -   "5432:5432"
+        restart: always
+
+    pg_ui:
+        image: adminer
+        container_name: adminer
+        ports:
+            - "8080:8080"
+        restart: always
