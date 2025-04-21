@@ -5,12 +5,13 @@ import {
     ChevronDownIcon,
     PuzzlePieceIcon
 } from '@heroicons/react/16/solid';
+import { GridIcon } from 'lucide-react';
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function TabMenu({ filter, search, setSearch }: { filter?: string, search: string, setSearch: (search: string) => void }) {
+export default function TabMenu({ filter, search, setSearch }: { filter: string, search: string, setSearch: (search: string) => void }) {
     type Tab = {
         name: string;
         href: string;
@@ -19,7 +20,8 @@ export default function TabMenu({ filter, search, setSearch }: { filter?: string
     }
 
     const tabs: Tab[] = [
-        { icon: BuildingStorefrontIcon, name: 'Food', href: '?filter=food', current: filter === "food" || filter === "" },
+        { icon: GridIcon, name: 'All', href: '/', current: filter === "" },
+        { icon: BuildingStorefrontIcon, name: 'Food', href: '?filter=food', current: filter === "food" },
         { icon: PuzzlePieceIcon, name: 'Activity', href: '?filter=activity', current: filter === "activity" },
         { icon: CameraIcon, name: 'Sights', href: '?filter=sights', current: filter === "sights" },
         { icon: CalendarIcon, name: 'Events', href: '?filter=events', current: filter === "events" },
